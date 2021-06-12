@@ -12,6 +12,8 @@ export const playerEntity = (position) => {
     addBlockGroup: {},
     blockGroup: {},
     adjacents: {},
+    bumps: {},
+    collisionGroup: {value: ['player', 'block']},
     position,
   })
 }

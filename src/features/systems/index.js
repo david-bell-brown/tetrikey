@@ -1,5 +1,6 @@
 import createGameInputUpdate from 'features/game/createGameInputUpdate'
 import createGameUpdate from 'features/game/createGameUpdate'
+import applyBumps from './applyBumps'
 import createGroupBlocks from './createGroupBlocks'
 import createPlayerGroup from './createPlayerGroup'
 import getAdjacents from './getAdjacents'
@@ -16,7 +17,7 @@ const registerSystems = (store) => {
   ]
   const inputSystems = [
     setMovement,
-    // applyBumps,
+    applyBumps,
     updatePosition,
     getAdjacents,
     markGrabbable,

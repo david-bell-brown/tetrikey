@@ -7,6 +7,8 @@ export const wallEntity = (position, color) => {
     size: {},
     color: {value: color},
     solid: {value: true},
+    inGroup: {}, // just to make a system selector easier
+    collisionGroup: {value: ['player', 'block']},
     position,
   })
 }

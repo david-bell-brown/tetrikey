@@ -9,8 +9,11 @@ const blockEntity = (position, color, groupId) => {
     animationState: {},
     inGroup: {groupId},
     adjacents: {},
+    bumps: {},
     grabbable: {},
     movement: {},
+    solid: {},
+    collisionGroup: {value: ['block']},
     position,
   })
 }
