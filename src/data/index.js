@@ -22,3 +22,4 @@ export const addBlocksToGroup = createComponent('addBlocksToGroup', {blocks: []}
 export const color = createComponent('color', {value: '#fff'})
 export const keyShard = createComponent('keyShard')
 export const grabbable = createComponent('grabbable', {value: false})
+export const wall = createComponent('wall')

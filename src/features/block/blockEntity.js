@@ -15,6 +15,6 @@ const blockEntity = (position, color, groupId) => {
   })
 }
 
-export const selectBlockEntity = createEntitySelector(['block', 'size', 'position', 'color'])
+export const selectBlockEntity = createEntitySelector(['block', 'size', 'position', 'color', 'grabbable'])
 
 export default blockEntity

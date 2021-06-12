@@ -10,6 +10,7 @@ const Block = () => {
     x={block.position.x}
     y={block.position.y}
     color={block.color.value}
+    grabbable={block.grabbable.value}
   />)
 }
 
