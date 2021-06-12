@@ -1,8 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import {configureEcsStore} from 'ecs'
+import * as components from 'data'
+import {gameSlice} from 'features/game/gameSlice'
 
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
-});
+export default configureEcsStore(Object.values(components), [gameSlice])

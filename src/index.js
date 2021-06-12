@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import { store } from './app/store';
+import store from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+
+import registerSystems from './features/systems'
+
+const gameLoop = registerSystems(store)
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <App gameLoop={gameLoop}/>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
