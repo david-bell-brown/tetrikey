@@ -9,7 +9,7 @@ const Sprite = ({open, ...props}) => {
     opacity: 0,
     scale: .8,
   } : {
-    opacity: .5,
+    opacity: .25,
     scale: 1,
   }})
   return (
