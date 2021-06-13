@@ -1,0 +1,9 @@
+<svg viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <rect id="Artboard1" x="0" y="0" width="160" height="160" style="fill:none;"/>
+    <path d="M144,144L160,160L-0,160L16,144L144,144Z" style="fill:rgb(89,89,89);"/>
+    <path d="M32,8L24,16L24,144L32,144L32,8Z" style="fill:rgb(166,166,166);"/>
+    <path d="M24,0L16,8L24,16L32,16L40,8L32,0L24,0Z" style="fill:rgb(230,26,26);"/>
+    <path d="M32,24L56,8L80,8L112,24L120,24L136,16L144,16L160,24L160,112L144,104L136,104L120,112L104,112L72,96L56,96L32,112L32,24Z" style="fill:rgb(74,230,26);"/>
+    <path d="M80,8L80,24L88,40L80,56L88,72L80,88L80,100L104,112L120,112L136,104L128,88L136,72L128,56L136,40L128,24L136,16L120,24L112,24L80,8Z" style="fill:rgb(64,191,79);"/>
+    <path d="M32,24L32,112L56,96L48,80L56,64L48,48L56,32L47,14L32,24Z" style="fill:rgb(64,191,79);"/>
+</svg>

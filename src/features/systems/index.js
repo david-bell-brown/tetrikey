@@ -1,5 +1,6 @@
 import createGameInputUpdate from 'features/game/createGameInputUpdate'
 import createGameUpdate from 'features/game/createGameUpdate'
+import advanceLevel from './advanceLevel'
 import applyBumps from './applyBumps'
 import createGroupBlocks from './createGroupBlocks'
 import createPlayerGroup from './createPlayerGroup'
@@ -27,7 +28,7 @@ const registerSystems = (store) => {
     markGrabbable,
     grabBlocks,
     // clampPosition,
-    // endScene,
+    advanceLevel,
   ]
   const updateStep = createGameUpdate(store, systems)
   const inputStep = createGameInputUpdate(store, inputSystems)

@@ -8,6 +8,7 @@ import levels from 'features/levels'
 import Wall from 'features/wall/Wall'
 import Lock from 'features/lock/Lock'
 import EndScene from './EndScene'
+import { setRoute } from 'features/game/gameSlice'
 // import Hud from '.../hud/Hud'
 
 const Background = ({width, height}) => (
@@ -34,9 +35,13 @@ const Scenes = () => {
   const level = useSelector(state => state.game.level)
 
   useEffect(() => {
-    const {actions, room} = levels[level - 1]
-    dispatch(sceneEntity({width: room.width, height: room.height}))
-    actions.forEach(a => {dispatch(a)})
+    if (level > levels.length) {
+      dispatch(setRoute('win'))
+    } else {
+      const {actions, room} = levels[level - 1]
+      dispatch(sceneEntity({width: room.width, height: room.height}))
+      actions.forEach(a => {dispatch(a)})
+    }
   }, [dispatch, level])
 
   return scenes.map((scene) => <Scene key={scene.id} id={scene.id} size={scene.size} />)

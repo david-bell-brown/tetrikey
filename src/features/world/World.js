@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 
 // import StartScreen from 'features/menu/StartScreen'
 // import GameOverScreen from 'features/menu/GameOverScreen'
+import WinScreen from 'features/menu/WinScreen'
 // import cameraEntity from 'features/camera/cameraEntity'
 import Scenes from 'features/scene/Scene'
 
@@ -25,6 +26,7 @@ const World = ({gameLoop, ...props}) => {
   const routes = {
     // 'start': <StartScreen/>,
     'scene': <Scenes/>,
+    'win': <WinScreen/>
     // 'gameOver': <><Scenes/><GameOverScreen/></>
   }
   
