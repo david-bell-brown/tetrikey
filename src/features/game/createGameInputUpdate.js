@@ -11,7 +11,7 @@ const inputMap = {
 
   KeyZ: 'grab',
   KeyX: 'rotateCCW',
-  KeyY: 'rotateCW',
+  KeyC: 'rotateCW',
 
   KeyR: 'retry',
 }

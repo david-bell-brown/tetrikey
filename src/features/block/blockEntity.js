@@ -12,12 +12,14 @@ const blockEntity = ({position, color, groupId}) => {
     bumps: {},
     grabbable: {},
     movement: {},
+    rotationTarget: {},
+    rotation: {},
     solid: {},
     collisionGroup: {value: ['block']},
     position,
   })
 }
 
-export const selectBlockEntity = createEntitySelector(['block', 'size', 'position', 'color', 'grabbable'])
+export const selectBlockEntity = createEntitySelector(['block', 'size', 'position', 'color', 'grabbable', 'rotation'])
 
 export default blockEntity

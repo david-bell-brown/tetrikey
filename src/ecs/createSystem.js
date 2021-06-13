@@ -54,7 +54,7 @@ const createSystem = (
       args,
       (action) => {actionQueue.push(action)}
     )
-    updates && store.dispatch(mergeComponents(updates))
+    updates && updates.length > 0 && store.dispatch(mergeComponents(updates))
     actionQueue.forEach((action) => {store.dispatch(action)})
   }
 

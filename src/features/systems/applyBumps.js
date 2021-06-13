@@ -21,6 +21,14 @@ const getBumps = (ePos, eMovement, others) => {
   return [xBumps, yBumps]
 }
 
+export const filterOtherSolids = (entity, others) => (
+  others
+    //filter out solids in the same group
+    .filter(solid => solid.inGroup.groupId !== entity.inGroup.groupId)
+    //only check solids that share a common collision group tag
+    .filter(solid => solid.collisionGroup.value.filter(c => entity.collisionGroup.value.includes(c)).length > 0) 
+)
+
 const applyBumps = createSystem(
   [
     [position, movement, collisionGroup, inGroup, bumps],
@@ -35,11 +43,7 @@ const applyBumps = createSystem(
       const playerBlocks = movers
         .filter(mover => mover.inGroup.groupId === player.inGroup.groupId)
         .map(mover => {
-          const others = solids
-            //filter out solids in the same group
-            .filter(solid => solid.inGroup.groupId !== mover.inGroup.groupId)
-            //only check solids that share a common collision group tag
-            .filter(solid => solid.collisionGroup.value.filter(c => mover.collisionGroup.value.includes(c)).length > 0)
+          const others = filterOtherSolids(mover, solids)
           let moverDraft = {...mover}
           let bumps = getBumps(moverDraft.position, sharedMovement, others)
           if (bumps[0].length > 0) {

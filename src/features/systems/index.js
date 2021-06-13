@@ -2,6 +2,7 @@ import createGameInputUpdate from 'features/game/createGameInputUpdate'
 import createGameUpdate from 'features/game/createGameUpdate'
 import advanceLevel from './advanceLevel'
 import applyBumps from './applyBumps'
+import applyRotation from './applyRotation'
 import createGroupBlocks from './createGroupBlocks'
 import createPlayerGroup from './createPlayerGroup'
 import getAdjacents from './getAdjacents'
@@ -11,6 +12,7 @@ import markGrabbable from './markGrabbable'
 import openLocks from './openLocks'
 import retryLevel from './retryLevel'
 import setMovement from './setMovement'
+import setRotationTarget from './setRotationTarget'
 import updatePosition from './updatePosition'
 
 const registerSystems = (store) => {
@@ -22,7 +24,9 @@ const registerSystems = (store) => {
   const inputSystems = [
     setMovement,
     applyBumps,
+    setRotationTarget,
     updatePosition,
+    applyRotation,
     getAdjacents,
     getIntersections,
     openLocks,

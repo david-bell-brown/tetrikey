@@ -7,6 +7,7 @@ export const playerEntity = (position) => {
     size: {},
     animationState: {},
     rotation: {},
+    rotationTarget: {},
     movement: {x: 0, y: 0},
     inGroup: {groupId: false},
     addBlockGroup: {},
