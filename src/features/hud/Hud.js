@@ -7,7 +7,7 @@ const ButtonBack = styled.path`
   fill: white;
   stroke: black;
   stroke-width: 1;
-  opacity: .75;
+  opacity: .5;
 `
 
 const ButtonText = styled.text`
