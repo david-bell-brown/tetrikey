@@ -1,8 +1,8 @@
-import { adjacents, grabbable, inGroup, player } from "data/index";
+import { adjacents, grabbable, inGroup, intersections, player } from "data/index";
 import createSystem from "ecs/createSystem";
 
 const markGrabbable = createSystem(
-  [[inGroup, adjacents], [player, inGroup], [inGroup, grabbable]],
+  [[inGroup, adjacents], [player, inGroup, intersections], [inGroup, grabbable]],
   ([blocks, players, grabbables]) => {
     let draft = []
     players.forEach(player => {
@@ -22,7 +22,7 @@ const markGrabbable = createSystem(
         ...draft,
         ...(grabbables.map(block => ({
           ...block,
-          grabbable: {value: adjacentGroups.has(block.inGroup.groupId)}
+          grabbable: {value: player.intersections.value.length === 0 && adjacentGroups.has(block.inGroup.groupId)}
         })))
       ]
     })

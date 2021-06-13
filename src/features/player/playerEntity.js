@@ -13,6 +13,7 @@ export const playerEntity = (position) => {
     blockGroup: {},
     adjacents: {},
     bumps: {},
+    intersections: {},
     collisionGroup: {value: ['player', 'block']},
     position,
   })

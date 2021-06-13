@@ -1,4 +1,4 @@
-import {ReactComponent as PlayerSvg} from './player.svg'
+import {ReactComponent as PlayerSvg} from './wizard.svg'
 
 const Sprite = props => (
   <PlayerSvg width="1" height="1" {...props} />

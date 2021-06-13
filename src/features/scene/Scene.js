@@ -6,6 +6,8 @@ import Player from '../player/Player'
 import Block from '../block/Block'
 import levels from 'features/levels'
 import Wall from 'features/wall/Wall'
+import Lock from 'features/lock/Lock'
+import EndScene from './EndScene'
 // import Hud from '.../hud/Hud'
 
 const Background = ({width, height}) => (
@@ -17,7 +19,9 @@ const Scene = ({id, size}) => {
     <svg id={id} viewBox={`0 0 ${size.width} ${size.height}`}>
       <Background width={size.width} height={size.height} />
       <Wall />
+      <Lock />
       <Block />
+      <EndScene />
       <Player />
       {/* <Hud/> */}
     </svg>

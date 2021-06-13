@@ -1,6 +1,6 @@
 import {addEntity, createEntitySelector} from 'ecs'
 
-const blockEntity = (position, color, groupId) => {
+const blockEntity = ({position, color, groupId}) => {
   return addEntity({
     block: {},
     inScene: {value: true},

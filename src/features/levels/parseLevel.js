@@ -2,14 +2,19 @@ import tilesetJson from './tileset.json'
 import keyShardEntity from 'features/keyShard/keyShardEntity'
 import playerEntity from 'features/player/playerEntity'
 import wallEntity from 'features/wall/wallEntity'
-// import backgroundEntity from 'features/background/backgroundEntity'
 import endSceneEntity from 'features/scene/endSceneEntity'
-// import lockEntity from 'features/lock/lockEntity'
+import blockEntity from 'features/block/blockEntity'
+import lockEntity from 'features/lock/lockEntity'
+import lockBlockEntity from 'features/lock/lockBlockEntity'
+import lockHoleEntity from 'features/lock/lockHoleEntity'
 
-const entityKey = {
+export const entityKey = {
   player: playerEntity,
   wall: wallEntity,
-  endLevel: endSceneEntity
+  endLevel: endSceneEntity,
+  key: blockEntity,
+  lock: lockBlockEntity,
+  keyHole: lockHoleEntity
 }
 
 const tileset = tilesetJson.tiles.reduce((acc, {id, type}) => ({
@@ -38,14 +43,13 @@ const colors = [
 ]
 
 const parseLevel = level => {
-  console.log(level)
   const room = {
     width: level.width,
     height: level.height
   }
   const base = level.layers.find(layer => layer.name === 'level')
   const keys = level.layers.filter(layer => layer.name === 'key')
-  // const locks = level.layers.filter(layer => layer.name === 'lock').data
+  const locks = level.layers.filter(layer => layer.name === 'lock')
 
   return {
     room,
@@ -54,11 +58,15 @@ const parseLevel = level => {
         base,
         ({type, position}) => entityKey[type](position)
       )),
-      ...(keys.map((layer, index) => keyShardEntity(mapLevelData(layer, (({position}) => ({
+      ...(keys.map((layer, index) => keyShardEntity(mapLevelData(layer, (({type, position}) => ({
+        type,
         position,
         color: colors[index % colors.length]
       })))))),
-      // ...(level.walls.map(e => wallEntity({x: e.x, y: e.y}))),
+      ...(locks.map((layer) => lockEntity(mapLevelData(layer, (({type, position}) => ({
+        type,
+        position,
+      })))))),
     ],
     
   }

@@ -4,8 +4,10 @@ import applyBumps from './applyBumps'
 import createGroupBlocks from './createGroupBlocks'
 import createPlayerGroup from './createPlayerGroup'
 import getAdjacents from './getAdjacents'
+import getIntersections from './getIntersections'
 import grabBlocks from './grabBlocks'
 import markGrabbable from './markGrabbable'
+import openLocks from './openLocks'
 import setMovement from './setMovement'
 import updatePosition from './updatePosition'
 
@@ -20,11 +22,11 @@ const registerSystems = (store) => {
     applyBumps,
     updatePosition,
     getAdjacents,
+    getIntersections,
+    openLocks,
     markGrabbable,
     grabBlocks,
     // clampPosition,
-    // setIntersections,
-    // clearBumps,
     // endScene,
   ]
   const updateStep = createGameUpdate(store, systems)
