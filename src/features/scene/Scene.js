@@ -13,7 +13,7 @@ import { setRoute } from 'features/game/gameSlice'
 import Hud from 'features/hud/Hud'
 
 const Background = ({width, height}) => (
-  <rect x="0" y="0" width={width} height={height} fill="#111111"/>
+  <rect x="0" y="0" width={width} height={height} fill="#1f1414"/>
 )
 
 const Scene = ({id, size, gameLoop}) => {

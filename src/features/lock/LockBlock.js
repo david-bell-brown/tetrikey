@@ -1,29 +1,25 @@
+import React from "react"
 import { useSelector } from "react-redux"
 import { selectLockBlockEntity } from "./lockBlockEntity"
 import {animated, useSpring} from 'react-spring'
-import React from "react"
+import {ReactComponent as LockBlockSvg} from './lockBlock.svg'
 
 const Sprite = ({open, ...props}) => {
   const styles = useSpring({to: open ? {
     opacity: .5,
     scale: .8,
-    rx: .15,
   } : {
     opacity: 1,
     scale: 1,
-    rx: 0,
   }})
   return (
-    <svg width="1" height="1" {...props}>
-      <animated.rect
-        width={1}
-        height={1}
-        fill="#ff0000"
-        style={{
-          transformOrigin: '.5px .5px',
-          ...styles
-        }}
-      />
+    <svg {...props}>
+      <animated.g style={{
+        transformOrigin: '.5px .5px',
+        ...styles
+      }}>
+        <LockBlockSvg width={1} height={1}/>
+      </animated.g>
     </svg>
   )
 }
