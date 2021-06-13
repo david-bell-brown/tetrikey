@@ -24,7 +24,6 @@ const applyRotation = createSystem(
         }, others)
       ]
     })
-    console.log(intersections)
     if (rotators.length > 0 && intersections.length === 0) {
       return rotators.map(e => ({
         ...e,
