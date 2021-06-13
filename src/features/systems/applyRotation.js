@@ -27,7 +27,7 @@ const applyRotation = createSystem(
     if (rotators.length > 0 && intersections.length === 0) {
       return rotators.map(e => ({
         ...e,
-        rotation: e.rotation + e.rotationTarget.rotation,
+        rotation: {value: e.rotation.value + e.rotationTarget.rotation},
         position: {x: e.rotationTarget.x, y: e.rotationTarget.y},
         rotationTarget: {rotation: null, x: null, y: null}
       }))

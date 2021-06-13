@@ -9,6 +9,7 @@ const Block = () => {
     id={block.id}
     x={block.position.x}
     y={block.position.y}
+    rotation={block.rotation.value}
     color={block.color.value}
     grabbable={block.grabbable.value}
   />)
