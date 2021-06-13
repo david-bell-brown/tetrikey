@@ -11,12 +11,14 @@ import LockBlock from 'features/lock/LockBlock'
 import EndScene from './EndScene'
 import { setRoute } from 'features/game/gameSlice'
 import Hud from 'features/hud/Hud'
+import { tutorials } from 'features/levels/index'
 
 const Background = ({width, height}) => (
   <rect x="0" y="0" width={width} height={height} fill="#1f1414"/>
 )
 
-const Scene = ({id, size, gameLoop}) => {
+const Scene = ({id, size, gameLoop, level}) => {
+  const Tutorial = tutorials[level - 1]
   return (
     <>
       <svg id={id} viewBox={`0 0 ${size.width} ${size.height}`}>
@@ -29,6 +31,7 @@ const Scene = ({id, size, gameLoop}) => {
         <EndScene />
         <Player />
       </svg>
+      {Tutorial && <Tutorial style={{opacity: .5}}/>}
       <Hud gameLoop={gameLoop}/>
     </>
   )
@@ -50,7 +53,7 @@ const Scenes = ({gameLoop}) => {
     }
   }, [dispatch, level, retries])
 
-  return scenes.map((scene) => <Scene key={scene.id} id={scene.id} size={scene.size} gameLoop={gameLoop}/>)
+  return scenes.map((scene) => <Scene key={scene.id} id={scene.id} size={scene.size} gameLoop={gameLoop} level={level}/>)
 }
 
 export default Scenes
