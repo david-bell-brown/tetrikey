@@ -25,7 +25,7 @@ const World = ({gameLoop, ...props}) => {
   
   const routes = {
     // 'start': <StartScreen/>,
-    'scene': <Scenes/>,
+    'scene': <Scenes gameLoop={gameLoop}/>,
     'win': <WinScreen/>
     // 'gameOver': <><Scenes/><GameOverScreen/></>
   }

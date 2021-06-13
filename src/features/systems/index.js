@@ -9,6 +9,7 @@ import getIntersections from './getIntersections'
 import grabBlocks from './grabBlocks'
 import markGrabbable from './markGrabbable'
 import openLocks from './openLocks'
+import retryLevel from './retryLevel'
 import setMovement from './setMovement'
 import updatePosition from './updatePosition'
 
@@ -29,6 +30,7 @@ const registerSystems = (store) => {
     grabBlocks,
     // clampPosition,
     advanceLevel,
+    retryLevel,
   ]
   const updateStep = createGameUpdate(store, systems)
   const inputStep = createGameInputUpdate(store, inputSystems)
@@ -44,6 +46,7 @@ const registerSystems = (store) => {
       updateStep.stop()
       // fixedStep.stop()
     },
+    runInputSystems: inputStep.runSystems
   }
 }
 

@@ -12,11 +12,13 @@ const inputMap = {
   KeyZ: 'grab',
   KeyX: 'rotateCCW',
   KeyY: 'rotateCW',
+
+  KeyR: 'retry',
 }
 
 const createGameInputUpdate = (store, systems=[]) => {
   const runSystems = (input) => {
-    systems.forEach(s => {s.execute(store, {input})})
+    input && systems.forEach(s => {s.execute(store, {input})})
   }
   const onDown = event => runSystems(inputMap[event.code])
   return {
@@ -25,7 +27,8 @@ const createGameInputUpdate = (store, systems=[]) => {
     },
     stop: () => {
       window.removeEventListener('keydown', onDown)
-    }
+    },
+    runSystems
   }
 }
 export default createGameInputUpdate
