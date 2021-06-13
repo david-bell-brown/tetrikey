@@ -6,7 +6,8 @@ import Player from '../player/Player'
 import Block from '../block/Block'
 import levels from 'features/levels'
 import Wall from 'features/wall/Wall'
-import Lock from 'features/lock/Lock'
+import LockHole from 'features/lock/LockHole'
+import LockBlock from 'features/lock/LockBlock'
 import EndScene from './EndScene'
 import { setRoute } from 'features/game/gameSlice'
 import Hud from 'features/hud/Hud'
@@ -21,8 +22,10 @@ const Scene = ({id, size, gameLoop}) => {
       <svg id={id} viewBox={`0 0 ${size.width} ${size.height}`}>
         <Background width={size.width} height={size.height} />
         <Wall />
-        <Lock />
+        <LockHole />
+        <LockBlock />
         <Block />
+        {/* <Lock /> */}
         <EndScene />
         <Player />
       </svg>

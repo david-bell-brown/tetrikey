@@ -12,6 +12,7 @@ const Block = () => {
     rotation={block.rotation.value}
     color={block.color.value}
     grabbable={block.grabbable.value}
+    open={block.collisionGroup.value.length === 0}
   />)
 }
 

@@ -12,7 +12,7 @@ const PlayerRender = ({id, x, y, rotation}) => {
     <animated.svg id={id} x={spring.x} y={spring.y}>
       <animated.g style={{
         transformOrigin: '.5px .5px',
-        transform: spring.transform
+        rotate: spring.rotate
       }}>
         <Sprite />
       </animated.g>
