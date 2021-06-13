@@ -16,7 +16,7 @@ const openLocks = createSystem(
       const holesInGroup = lockHoles.filter(e => e.inGroup.groupId === lock.id)
       const blockIntersections = blocksInGroup.filter(e => !e.open.value && e.intersections.value.filter(id => !players.map(p => p.id).includes(id)).length > 0)
       const holeIntersections = holesInGroup.filter(e => e.intersections.value.length > 0).map(e => e.intersections.value)
-      if (!holesInGroup[0].open.value && blockIntersections.length === 0 && holeIntersections.length >= holesInGroup.length) {
+      if (holesInGroup.filter(e => e.open.value).length === 0 && blockIntersections.length === 0 && holeIntersections.length >= holesInGroup.length) {
         const flatIntersections = holeIntersections.reduce((acc, curr) => ([...acc, ...curr]), [])
         draft = [
           ...draft,
